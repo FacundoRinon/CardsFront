@@ -1,10 +1,10 @@
-import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import DondeHayCartas from "./pages/dondeHayCartas";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Team from "./pages/Team";
+import Store from "./pages/Store";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -14,8 +14,11 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<SignUp />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/cards" element={<Team />} />
+        <Route element={<ProtectedRoute />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/team" element={<Team />} context={"/team"} />
+          <Route path="/store" element={<Store />} context={"/store"} />
+        </Route>
       </Routes>
     </>
   );

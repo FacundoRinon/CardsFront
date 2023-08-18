@@ -151,15 +151,14 @@ function SignUp() {
                       }
                     />
                   </div>
-                  <Link to="/login">
-                    <p>Already have an account? Login!</p>
-                  </Link>
 
                   <button type="submit" className="btn btn-primary">
                     Sign Up
                   </button>
                   <ToastContainer />
                 </form>
+                <p className="mt-3">Already have an account?</p>
+                <Link to="/login">Login!</Link>
               </div>
             </div>
           </div>

@@ -1,5 +1,5 @@
 #background {
-  width: 500px;
+  width: 400px;
   height: 400px;
   object-fit: cover;
   position: relative;
@@ -11,20 +11,23 @@
   position: absolute; /* Cambiado a absolute */
   object-fit: contain;
   width: 100%;
-  height: 50%;
+  height: 65%;
   z-index: 0; /* Cambiado a 1 */
-  bottom: 200px; /* Cambiado a 0 */
+  bottom: 25px; /* Cambiado a 0 */
 }
 
-#logo {
+#cardName {
   position: absolute; /* Cambiado a absolute */
-  object-fit: contain;
-  width: 100%;
-  height: 20%;
   z-index: 1; /* Cambiado a 1 */
-  bottom: 150px; /* Cambiado a 0 */
+  bottom: 260px; /* Cambiado a 0 */
+  left: 25%;
+  font-size: 1.3rem;
 }
 
 .my-atropos {
   width: 25%;
+  height: 350px;
+  margin: auto;
+  margin-top: 1rem;
+  border-radius: 10%;
 }

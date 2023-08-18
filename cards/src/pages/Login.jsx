@@ -52,49 +52,45 @@ function Login() {
               />
             </div>
             <div className="col-4 text-center loginForm">
-              <div className="row d-flex justify-content-center">
-                <h1 className="title mb-5">Welcome Back!</h1>
-                <form
-                  className="w-75"
-                  method="post"
-                  action="/login"
-                  onSubmit={handleSubmit}
-                >
-                  <div className="mb-3">
-                    <input
-                      type="string"
-                      className="form-control"
-                      id="username"
-                      aria-describedby="emailHelp"
-                      placeholder="Username or email"
-                      name="username"
-                      value={usernameValue}
-                      onChange={(event) => setUsernameValue(event.target.value)}
-                    />
-                  </div>
+              <h1 className="title mb-5">Welcome Back!</h1>
+              <form
+                className="w-75"
+                method="post"
+                action="/login"
+                onSubmit={handleSubmit}
+              >
+                <div className="mb-3">
+                  <input
+                    type="string"
+                    className="form-control"
+                    id="username"
+                    aria-describedby="emailHelp"
+                    placeholder="Username or email"
+                    name="username"
+                    value={usernameValue}
+                    onChange={(event) => setUsernameValue(event.target.value)}
+                  />
+                </div>
 
-                  <div className="mb-3">
-                    <input
-                      type="password"
-                      className="form-control"
-                      id="Password"
-                      placeholder="Password"
-                      name="Password"
-                      value={passwordValue}
-                      onChange={(event) => setPasswordValue(event.target.value)}
-                    />
-                  </div>
+                <div className="mb-3">
+                  <input
+                    type="password"
+                    className="form-control"
+                    id="Password"
+                    placeholder="Password"
+                    name="Password"
+                    value={passwordValue}
+                    onChange={(event) => setPasswordValue(event.target.value)}
+                  />
+                </div>
 
-                  <Link to={"/signUp"}>
-                    <p>Dont have an account? SignUp</p>
-                  </Link>
-
-                  <button type="submit" className="btn btn-primary">
-                    Login
-                  </button>
-                </form>
-                <ToastContainer />
-              </div>
+                <button type="submit" className="btn btn-primary mt-3 mb-4">
+                  Login
+                </button>
+                <p>Dont have an account?</p>
+                <Link to={"/signUp"}>SignUp</Link>
+              </form>
+              <ToastContainer />
             </div>
           </div>
         </div>
