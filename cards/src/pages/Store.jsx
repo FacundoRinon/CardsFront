@@ -1,6 +1,6 @@
 import Card from "../components/card";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { getCards } from "../redux/cardsSlice";
 import { Link } from "react-router-dom";
@@ -38,7 +38,7 @@ function Store() {
           <div className="col-2">
             <Link to={"/"}>
               <h5>
-                <i className="bi bi-arrow-left"></i>
+                <i className="bi bi-arrow-left fs-1"></i>
               </h5>
             </Link>
           </div>

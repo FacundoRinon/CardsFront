@@ -23,7 +23,7 @@ function Team() {
           <div className="col-2">
             <Link to={"/"}>
               <h5>
-                <i className="bi bi-arrow-left"></i>
+                <i className="bi bi-arrow-left fs-1"></i>
               </h5>
             </Link>
           </div>
@@ -35,7 +35,7 @@ function Team() {
           {team.length >= 1 ? (
             <Card key={team[0]._id} card={team[0]} context={"/team"} />
           ) : (
-            <div className="col-4 text-center team-member">
+            <div className="col-8 col-md-6 col-lg-3 col-xl-3 text-center team-member">
               <i className="bi bi-file-plus"></i>
               <p>Team member 1</p>
             </div>
@@ -44,7 +44,7 @@ function Team() {
           {team.length >= 2 ? (
             <Card key={team[1]._id} card={team[1]} context={"/team"} />
           ) : (
-            <div className="col-4 text-center team-member">
+            <div className="col-8 col-md-6 col-lg-3 col-xl-3 text-center team-member">
               <i className="bi bi-file-plus"></i>
               <p>Team member 2</p>
             </div>
@@ -52,7 +52,7 @@ function Team() {
           {team.length >= 3 ? (
             <Card key={team[2]._id} card={team[2]} context={"/team"} />
           ) : (
-            <div className="col-4 text-center team-member">
+            <div className="col-8 col-md-6 col-lg-3 col-xl-3 text-center team-member">
               <i className="bi bi-file-plus"></i>
               <p>Team member 3</p>
             </div>

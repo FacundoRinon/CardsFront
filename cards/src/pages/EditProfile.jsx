@@ -76,7 +76,7 @@ function EditProfile() {
           <div className="col-2">
             <Link to={"/"}>
               <h5>
-                <i className="bi bi-arrow-left"></i>
+                <i className="bi bi-arrow-left fs-1"></i>
               </h5>
             </Link>
           </div>
