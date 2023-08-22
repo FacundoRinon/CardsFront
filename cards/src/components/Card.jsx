@@ -11,7 +11,12 @@ function Card({ card, context }) {
   const atroposContainerRef = useRef(null);
 
   const [trigger, setTrigger] = useState(false);
-  console.log(trigger);
+  const [modalClosed, setModalClosed] = useState(true);
+
+  const handleModalClose = () => {
+    setTrigger(false); // Restablecer trigger a false
+    setModalClosed(true); // Indicar que el modal está cerrado
+  };
 
   useEffect(() => {
     if (atroposContainerRef.current) {
@@ -28,8 +33,10 @@ function Card({ card, context }) {
         className="my-atropos"
         ref={atroposContainerRef}
         onClick={() => {
-          setTrigger(true);
-          // setTrigger(false);
+          if (modalClosed) {
+            setTrigger(true);
+            setModalClosed(false); // Indicar que el modal no está cerrado
+          }
         }}
       >
         <div className="atropos-scale">
@@ -65,6 +72,7 @@ function Card({ card, context }) {
           card={card}
           context={context}
           trigger={trigger}
+          onClose={handleModalClose}
         />
       </div>
     </>

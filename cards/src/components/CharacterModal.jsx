@@ -10,21 +10,18 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { addCard, toggleTeam } from "../redux/userSlice";
 
-function Example({ card, context, trigger }) {
+function Example({ card, context, trigger, onClose }) {
   const user = useSelector((state) => state.user);
   const [show, setShow] = useState(false);
   const [localTrigger, setLocalTrigger] = useState(false);
 
   const handleClose = () => {
     setShow(false);
-    setLocalTrigger(false);
+    onClose(); // Llamar a la función para cerrar el modal
   };
 
   useEffect(() => {
-    if (trigger) {
-      setShow(true);
-      setLocalTrigger(true);
-    }
+    setShow(trigger);
   }, [trigger]);
 
   const dispatch = useDispatch();
