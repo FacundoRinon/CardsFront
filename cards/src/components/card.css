@@ -24,6 +24,15 @@
   font-size: 1.3rem;
 }
 
+.characterModal {
+  color: white;
+  background-color: rgb(37, 36, 36);
+}
+
+.characterModalPic {
+  height: 400px;
+}
+
 .my-atropos {
   width: 25%;
   height: 350px;

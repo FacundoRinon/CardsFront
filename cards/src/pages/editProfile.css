@@ -1,0 +1,13 @@
+.editProfilePic {
+  width: 12rem;
+  object-fit: cover;
+  border-radius: 50%;
+  height: 12rem;
+}
+
+#editProfileSaveButton {
+  background-color: rgb(18, 135, 182);
+  color: white;
+  width: 25%;
+  margin-top: 1.5rem;
+}

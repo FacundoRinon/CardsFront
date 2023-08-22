@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-function Team({ context }) {
+function Team() {
   const user = useSelector((state) => state.user);
   const cards = useSelector((state) => state.cards);
 

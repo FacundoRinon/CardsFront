@@ -22,9 +22,28 @@ const userSlice = createSlice({
           (teamCard) => teamCard._id !== card._id
         );
         user.team = updatedTeam;
+      } else if (team.length >= 3) {
+        user.team = team;
       } else {
         team = [...team, card];
         user.team = team;
+      }
+      return { ...user };
+    },
+    addCard(state, action) {
+      let user = { ...action.payload.user };
+      let unlocked = [...action.payload.user.unlockedCards];
+      let card = action.payload.card;
+
+      const isCardInCollection = unlocked.some(
+        (collectionCard) => collectionCard._id === card._id
+      );
+
+      if (isCardInCollection) {
+        user.unlockedCards = unlocked;
+      } else {
+        unlocked = [...unlocked, card];
+        user.unlockedCards = unlocked;
       }
       return { ...user };
     },
@@ -32,5 +51,5 @@ const userSlice = createSlice({
 });
 
 const { actions, reducer } = userSlice;
-export const { setToken, removeToken, toggleTeam } = actions;
+export const { setToken, removeToken, toggleTeam, addCard } = actions;
 export default reducer;

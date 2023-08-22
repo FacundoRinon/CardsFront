@@ -3,9 +3,13 @@ import "atropos/css";
 import Atropos from "atropos";
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import Example from "./CharacterModal";
 
 import axios from "axios";
-import { setToken, toggleTeam } from "../redux/userSlice";
+import { addCard, toggleTeam } from "../redux/userSlice";
 
 function Card({ card, context }) {
   const user = useSelector((state) => state.user);
@@ -22,40 +26,66 @@ function Card({ card, context }) {
     }
   }, []);
 
-  // useEffect(() => {
-  //   const getUser = async () => {
-  //     try {
-  //       const response = await axios({
-  //         method: "GET",
-  //         url: `${import.meta.env.VITE_API_URL}/user/${user.id}`,
-  //         headers: {
-  //           Authorization: `Bearer ${user.token}`,
-  //         },
-  //       });
-  //       console.log("response.data", response.data);
-  //       dispatch(setToken(response.data));
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-  // }, [user.team]);
-
   const handleCardClick = async () => {
     if (context === "/team") {
       try {
-        const response = axios({
+        const response = await axios({
           method: "PATCH",
           url: `${import.meta.env.VITE_API_URL}/user/${card._id}`,
           headers: {
             Authorization: `Bearer ${user.token}`,
           },
         });
-        dispatch(toggleTeam({ user: user, card: card }));
+        if (response.data === "teamComplete") {
+          toast.error(
+            <div>
+              <span className="Toastify__toast--error"></span>
+              Your team is full
+            </div>,
+            {
+              position: toast.POSITION.TOP_RIGHT,
+            }
+          );
+        } else {
+          dispatch(toggleTeam({ user: user, card: card }));
+        }
       } catch (error) {
         console.log(error);
       }
     } else if (context === "/store") {
-      console.log(card._id);
+      try {
+        const response = await axios({
+          method: "PUT",
+          url: `${import.meta.env.VITE_API_URL}/user/${card._id}`,
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        });
+        if (response.data === "alreadyUnlocked") {
+          toast.error(
+            <div>
+              <span className="Toastify__toast--error"></span>
+              You already have this card
+            </div>,
+            {
+              position: toast.POSITION.TOP_RIGHT,
+            }
+          );
+        } else {
+          dispatch(addCard({ user: user, card: card }));
+          toast.success(
+            <div>
+              <span className="Toastify__toast--success"></span>
+              New card added to your collection
+            </div>,
+            {
+              position: toast.POSITION.TOP_RIGHT,
+            }
+          );
+        }
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 
@@ -64,7 +94,7 @@ function Card({ card, context }) {
       <div
         className="my-atropos"
         ref={atroposContainerRef}
-        onClick={handleCardClick}
+        // onClick={handleCardClick}
       >
         <div className="atropos-scale">
           <div className="atropos-rotate">
@@ -89,6 +119,8 @@ function Card({ card, context }) {
             </div>
           </div>
         </div>
+        <Example className="characterModal" card={card} />
+        <ToastContainer />
       </div>
     </>
   );

@@ -5,7 +5,7 @@ import axios from "axios";
 import { getCards } from "../redux/cardsSlice";
 import { Link } from "react-router-dom";
 
-function Store({ context }) {
+function Store() {
   const user = useSelector((state) => state.user);
   const cards = useSelector((state) => state.cards);
 

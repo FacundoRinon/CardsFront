@@ -17,14 +17,17 @@ function Sidebar({ user }) {
   return (
     <>
       <div id="sidebar" className="text-center">
-        <img
-          id="homePic"
-          src={`${import.meta.env.VITE_IMG_URL}/${user.avatar}`}
-          alt="Foto"
-        />
+        <Link to={"/editProfile"}>
+          <img
+            id="homePic"
+            src={`${import.meta.env.VITE_IMG_URL}/${user.avatar}`}
+            alt="Foto"
+          />
+        </Link>
         <h3 className="tw">
           {user.firstname} {user.lastname}
         </h3>
+        <p>@{user.username}</p>
         <Link className="no-underline" to={"/team"}>
           <h5 className="tw mt-5 sidebarLink">Team</h5>
         </Link>
