@@ -3,3 +3,9 @@
   object-fit: cover;
   height: 100vh;
 }
+
+@media (max-width: 575px) {
+  .sidebar {
+    display: none;
+  }
+}

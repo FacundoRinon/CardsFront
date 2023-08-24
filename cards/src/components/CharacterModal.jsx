@@ -13,11 +13,10 @@ import { addCard, toggleTeam } from "../redux/userSlice";
 function Example({ card, context, trigger, onClose }) {
   const user = useSelector((state) => state.user);
   const [show, setShow] = useState(false);
-  const [localTrigger, setLocalTrigger] = useState(false);
 
   const handleClose = () => {
     setShow(false);
-    onClose(); // Llamar a la función para cerrar el modal
+    onClose();
   };
 
   useEffect(() => {
@@ -93,7 +92,7 @@ function Example({ card, context, trigger, onClose }) {
               {card.name} was added to your collection
             </div>,
             {
-              position: toast.POSITION.TOP_RIGHT,
+              position: toast.POSITION.TOP_CENTER,
             }
           );
         }
@@ -135,9 +134,9 @@ function Example({ card, context, trigger, onClose }) {
                   </div>
                   <div className="col-6">
                     <h3>Cost</h3>
-                    <h5>10 strength</h5>
-                    <h5>5 inteligence</h5>
-                    <h5>5 energy</h5>
+                    <h5>physical power: {card.physicalPower} </h5>
+                    <h5>intelligence: {card.intelligence}</h5>
+                    <h5>cursed power: {card.cursedPower}</h5>
                   </div>
                 </div>
               </div>

@@ -84,15 +84,15 @@ function EditProfile() {
         <div className="row mb-3 text-center">
           <h1>Edit your profile</h1>
         </div>
-        <div className="row mt-5">
-          <div className="col-3">
+        <div className="row mt-5 d-flex justify-content-center">
+          <div className="col-12 col-lg-3 text-center">
             <img
               className="editProfilePic"
               src={`${import.meta.env.VITE_IMG_URL}/${user.avatar}`}
               alt=""
             />
           </div>
-          <div className="col-9">
+          <div className="col-12 col-lg-9 text-center">
             <h2>
               {firstnameValue} {lastnameValue}
             </h2>
@@ -102,7 +102,7 @@ function EditProfile() {
         {user && (
           <form className="mt-5" onSubmit={handleSubmit}>
             <div className="row">
-              <div className="col-6 mb-1">
+              <div className="col-12 col-sm-6 mb-1">
                 <label htmlFor="inputFirstname" className="form-label">
                   First name
                 </label>
@@ -115,7 +115,7 @@ function EditProfile() {
                   onChange={(event) => setFirstnameValue(event.target.value)}
                 />
               </div>
-              <div className="col-6 mb-1">
+              <div className="col-12 col-sm-6 mb-1">
                 <label htmlFor="inputLastname" className="form-label">
                   Last name
                 </label>
@@ -130,7 +130,7 @@ function EditProfile() {
               </div>
             </div>
             <div className="row">
-              <div className="col-6 mb-1">
+              <div className="col-12 col-sm-6 mb-1">
                 <label htmlFor="inputUsername" className="form-label">
                   Username
                 </label>
@@ -143,7 +143,7 @@ function EditProfile() {
                   onChange={(event) => setUsernameValue(event.target.value)}
                 />
               </div>
-              <div className="col-6 pb-1">
+              <div className="col-12 col-sm-6 pb-1">
                 <label htmlFor="inputPhoto" className="mb-2">
                   Avatar
                 </label>

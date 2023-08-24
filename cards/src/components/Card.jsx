@@ -27,15 +27,19 @@ function Card({ card, context }) {
     }
   }, []);
 
+  const cardInPossesion = user.unlockedCards.some(
+    (unlockedCard) => unlockedCard._id === card._id
+  );
+
   return (
     <>
       <div
-        className="my-atropos"
+        className={`my-atropos ${!cardInPossesion ? "card-disabled" : ""}`}
         ref={atroposContainerRef}
         onClick={() => {
           if (modalClosed) {
             setTrigger(true);
-            setModalClosed(false); // Indicar que el modal no está cerrado
+            setModalClosed(false);
           }
         }}
       >
@@ -60,9 +64,11 @@ function Card({ card, context }) {
                 <h5 id="cardName" data-atropos-offset="7">
                   {card.name}
                 </h5>
-                <h5 id="cardName2" data-atropos-offset="5">
-                  {card.name}
-                </h5>
+                {!cardInPossesion && (
+                  <h2 id="lockedText" data-atropos-offset="15">
+                    Locked
+                  </h2>
+                )}
               </div>
             </div>
           </div>
