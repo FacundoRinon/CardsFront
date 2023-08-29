@@ -28,7 +28,7 @@
     object-fit: contain;
     width: 100%;
     height: 65%;
-    z-index: 0; /* Cambiado a 1 */
+    z-index: 1; /* Cambiado a 1 */
     bottom: 25px; /* Cambiado a 0 */
   }
 
@@ -43,10 +43,14 @@
 
   #cardName {
     position: absolute; /* Cambiado a absolute */
-    z-index: 1; /* Cambiado a 1 */
+    z-index: 0; /* Cambiado a 1 */
     bottom: 260px; /* Cambiado a 0 */
     left: 25%;
     font-size: 1.3rem;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 8px;
+    background-color: black;
   }
 
   #lockedText {
@@ -55,8 +59,10 @@
     bottom: 5px; /* Cambiado a 0 */
     left: 65%;
     font-size: 1.5rem;
+    color: black;
+    border: 1px solid black;
     border-radius: 15px;
-    background-color: rgb(0, 81, 255);
+    background-color: rgb(139, 149, 170);
     padding: 0.5rem;
   }
 }
@@ -93,8 +99,12 @@
     position: absolute; /* Cambiado a absolute */
     z-index: 1;
     bottom: 280px; /* Cambiado a 0 */
-    left: 25%;
+    left: 15%;
     font-size: 1.5rem;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 8px;
+    background-color: black;
   }
 
   #lockedText {
@@ -103,8 +113,10 @@
     bottom: 5px; /* Cambiado a 0 */
     left: 65%;
     font-size: 1.5rem;
+    color: black;
+    border: 1px solid black;
     border-radius: 15px;
-    background-color: rgb(0, 81, 255);
+    background-color: rgb(139, 149, 170);
     padding: 0.5rem;
   }
 }
@@ -138,11 +150,15 @@
   }
 
   #cardName {
+    width: 50%;
     position: absolute; /* Cambiado a absolute */
     z-index: 1;
     bottom: 280px; /* Cambiado a 0 */
-    left: 25%;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 8px;
+    background-color: black;
   }
 
   #lockedText {
@@ -151,8 +167,10 @@
     bottom: 5px; /* Cambiado a 0 */
     left: 30%;
     font-size: 1rem;
+    color: black;
+    border: 1px solid black;
     border-radius: 15px;
-    background-color: rgb(0, 81, 255);
+    background-color: rgb(139, 149, 170);
     padding: 0.5rem;
   }
 }

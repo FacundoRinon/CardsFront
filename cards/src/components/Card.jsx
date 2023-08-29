@@ -14,8 +14,8 @@ function Card({ card, context }) {
   const [modalClosed, setModalClosed] = useState(true);
 
   const handleModalClose = () => {
-    setTrigger(false); // Restablecer trigger a false
-    setModalClosed(true); // Indicar que el modal está cerrado
+    setTrigger(false);
+    setModalClosed(true);
   };
 
   useEffect(() => {
@@ -46,7 +46,7 @@ function Card({ card, context }) {
         <div className="atropos-scale">
           <div className="atropos-rotate">
             <div className="atropos-inner">
-              <div className="">
+              <div>
                 <img
                   src={card.background}
                   className="card-img-top"
@@ -61,7 +61,11 @@ function Card({ card, context }) {
                   alt="character"
                   data-atropos-offset="10"
                 />
-                <h5 id="cardName" data-atropos-offset="7">
+                <h5
+                  id="cardName"
+                  className="text-center"
+                  data-atropos-offset="7"
+                >
                   {card.name}
                 </h5>
                 {!cardInPossesion && (

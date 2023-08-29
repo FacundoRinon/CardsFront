@@ -9,6 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import axios from "axios";
 import { addCard, toggleTeam } from "../redux/userSlice";
+// import { addToTeam } from "../redux/cardsSlice";
 
 function Example({ card, context, trigger, onClose }) {
   const user = useSelector((state) => state.user);
@@ -52,6 +53,7 @@ function Example({ card, context, trigger, onClose }) {
           );
         } else {
           dispatch(toggleTeam({ user: user, card: card }));
+          // dispatch(addToTeam({ card: card }));
           toast.success(
             <div>
               <span className="Toastify__toast--success"></span>

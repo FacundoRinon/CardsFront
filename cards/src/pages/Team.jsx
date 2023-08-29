@@ -1,6 +1,6 @@
 import "./team.css";
 import { useDispatch } from "react-redux";
-import Card from "../components/card";
+import Card from "../components/Card";
 import { getCards } from "../redux/cardsSlice";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import { useEffect } from "react";
@@ -57,6 +57,27 @@ function Team() {
               <p>Team member 3</p>
             </div>
           )}
+        </div>
+        <div className="row d-flex text-center">
+          <h3>Points per hour</h3>
+          <div className="col">
+            <p>
+              Physical power:{" "}
+              {/* {team[0].physicalPower +
+                team[1].physicalPower +
+                team[2].physicalPower} */}
+            </p>
+            <p>
+              Intelligence:{" "}
+              {/* {team[0].intelligence +
+                team[1].intelligence +
+                team[2].intelligence} */}
+            </p>
+            <p>
+              Cursed power:{" "}
+              {/* {team[0].cursedPower + team[1].cursedPower + team[2].cursedPower} */}
+            </p>
+          </div>
         </div>
         <div className="row text-center">
           <h2 className="mt-5 mb-3">Available characters</h2>
