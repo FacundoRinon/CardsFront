@@ -31,11 +31,11 @@ function Sidebar({ user }) {
         <Link className="no-underline" to={"/team"}>
           <h5 className="tw mt-5 sidebarLink">Team</h5>
         </Link>
-        <Link className="no-underline" to={"/"}>
-          <h5 className="tw mt-5 sidebarLink">Colection</h5>
-        </Link>
         <Link className="no-underline" to={"/store"}>
           <h5 className="tw mt-5 sidebarLink">Store</h5>
+        </Link>
+        <Link className="no-underline" to={"/"}>
+          <h5 className="tw mt-5 sidebarLink">About Project</h5>
         </Link>
         <span onClick={handleLogout} className="btn btn-danger sidebarLogout">
           Log Out

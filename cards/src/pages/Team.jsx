@@ -6,6 +6,7 @@ import { useSelector } from "react-redux/es/hooks/useSelector";
 import { useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import ShowTeam from "../components/ShowTeam";
 
 function Team() {
   const user = useSelector((state) => state.user);
@@ -15,6 +16,22 @@ function Team() {
   const unlocked = user.unlockedCards;
 
   const dispatch = useDispatch();
+
+  let totalPhysicalPower = 0;
+  let totalIntelligence = 0;
+  let totalCursedPower = 0;
+
+  user.team.forEach((card) => {
+    totalPhysicalPower += card.physicalPower * 6;
+  });
+
+  user.team.forEach((card) => {
+    totalIntelligence += card.intelligence * 6;
+  });
+
+  user.team.forEach((card) => {
+    totalCursedPower += card.cursedPower * 6;
+  });
 
   return (
     <>
@@ -30,6 +47,9 @@ function Team() {
         </div>
         <div className="row mb-3 text-center">
           <h1>Your team</h1>
+        </div>
+        <div className="row">
+          <ShowTeam />
         </div>
         <div className="row">
           {team.length >= 1 ? (
@@ -61,22 +81,9 @@ function Team() {
         <div className="row d-flex text-center">
           <h3>Points per hour</h3>
           <div className="col">
-            <p>
-              Physical power:{" "}
-              {/* {team[0].physicalPower +
-                team[1].physicalPower +
-                team[2].physicalPower} */}
-            </p>
-            <p>
-              Intelligence:{" "}
-              {/* {team[0].intelligence +
-                team[1].intelligence +
-                team[2].intelligence} */}
-            </p>
-            <p>
-              Cursed power:{" "}
-              {/* {team[0].cursedPower + team[1].cursedPower + team[2].cursedPower} */}
-            </p>
+            <p>Physical power: {totalPhysicalPower}</p>
+            <p>Intelligence: {totalIntelligence}</p>
+            <p>Cursed power: {totalCursedPower}</p>
           </div>
         </div>
         <div className="row text-center">

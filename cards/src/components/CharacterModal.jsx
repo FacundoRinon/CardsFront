@@ -9,11 +9,14 @@ import "react-toastify/dist/ReactToastify.css";
 
 import axios from "axios";
 import { addCard, toggleTeam } from "../redux/userSlice";
-// import { addToTeam } from "../redux/cardsSlice";
 
 function Example({ card, context, trigger, onClose }) {
   const user = useSelector((state) => state.user);
   const [show, setShow] = useState(false);
+
+  const isCardUnlocked = user.unlockedCards.some(
+    (cardObj) => cardObj.id === card.id
+  );
 
   const handleClose = () => {
     setShow(false);
@@ -86,6 +89,16 @@ function Example({ card, context, trigger, onClose }) {
               position: toast.POSITION.TOP_RIGHT,
             }
           );
+        } else if (response.data === "insuficentPoints") {
+          toast.error(
+            <div>
+              <span className="Toastify__toast--error"></span>
+              You don't have enough points
+            </div>,
+            {
+              position: toast.POSITION.TOP_RIGHT,
+            }
+          );
         } else {
           dispatch(addCard({ user: user, card: card }));
           toast.success(
@@ -130,16 +143,41 @@ function Example({ card, context, trigger, onClose }) {
                   <p>{card.description}</p>
                 </div>
                 <div className="row">
-                  <div className="col-6">
-                    <h3>Ability</h3>
-                    <p>{card.ability}</p>
-                  </div>
-                  <div className="col-6">
-                    <h3>Cost</h3>
-                    <h5>physical power: {card.physicalPower} </h5>
-                    <h5>intelligence: {card.intelligence}</h5>
-                    <h5>cursed power: {card.cursedPower}</h5>
-                  </div>
+                  {isCardUnlocked ? (
+                    <div className="col-6">
+                      <h3>Ability</h3>
+                      <p>{card.ability}</p>
+                    </div>
+                  ) : (
+                    <div className="col-4">
+                      <h3>Ability</h3>
+                      <p>{card.ability}</p>
+                    </div>
+                  )}
+                  {!isCardUnlocked && (
+                    <div className="col-4">
+                      <h3>Cost</h3>
+
+                      <h5>physical power: {card.cost[0]} </h5>
+                      <h5>intelligence: {card.cost[1]}</h5>
+                      <h5>cursed power: {card.cost[2]}</h5>
+                    </div>
+                  )}
+                  {isCardUnlocked ? (
+                    <div className="col-6">
+                      <h3>Stats</h3>
+                      <h5>physical power: {card.physicalPower}</h5>
+                      <h5>intelligence: {card.intelligence}</h5>
+                      <h5>cursed power: {card.cursedPower}</h5>
+                    </div>
+                  ) : (
+                    <div className="col-4">
+                      <h3>Stats</h3>
+                      <h5>physical power: {card.physicalPower}</h5>
+                      <h5>intelligence: {card.intelligence}</h5>
+                      <h5>cursed power: {card.cursedPower}</h5>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

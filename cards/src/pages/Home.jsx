@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import axios from "axios";
 import { getCards } from "../redux/cardsSlice";
+import { setToken } from "../redux/userSlice";
 
 function Home() {
   const user = useSelector((state) => state.user);
@@ -28,9 +29,31 @@ function Home() {
     }
   };
 
+  const getUserInfo = async () => {
+    try {
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_URL}/user/${user.id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
+      dispatch(setToken(response.data));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     gettingCards();
-  }, [user]);
+    console.log("Actualiza data de cartas");
+  }, [user.team]);
+
+  useEffect(() => {
+    getUserInfo();
+    console.log("Actualiza data de user");
+  }, []);
 
   return (
     <>
