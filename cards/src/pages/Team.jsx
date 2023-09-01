@@ -48,10 +48,10 @@ function Team() {
         <div className="row mb-3 text-center">
           <h1>Your team</h1>
         </div>
-        <div className="row">
-          <ShowTeam />
+        <div className="row justify-content-center mb-5">
+          <ShowTeam slotA={team[0]} slotB={team[1]} slotC={team[2]} />
         </div>
-        <div className="row">
+        {/* <div className="row">
           {team.length >= 1 ? (
             <Card key={team[0]._id} card={team[0]} context={"/team"} />
           ) : (
@@ -77,7 +77,7 @@ function Team() {
               <p>Team member 3</p>
             </div>
           )}
-        </div>
+        </div> */}
         <div className="row d-flex text-center">
           <h3>Points per hour</h3>
           <div className="col">

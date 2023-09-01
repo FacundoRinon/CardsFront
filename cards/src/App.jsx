@@ -6,6 +6,7 @@ import Team from "./pages/Team";
 import Store from "./pages/Store";
 import ProtectedRoute from "./components/ProtectedRoute";
 import EditProfile from "./pages/EditProfile";
+import AboutProject from "./pages/AboutProject";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<SignUp />} />
+        <Route path="/project" element={<AboutProject />} />
         <Route element={<ProtectedRoute />}>
           <Route path="/" element={<Home />} />
           <Route path="editProfile" element={<EditProfile />} />

@@ -1,0 +1,46 @@
+.my-atropos3 {
+  height: 23rem;
+  width: 70%;
+  margin-left: 25%;
+  /* border-radius: 10px; */
+  /* overflow: hidden; */
+}
+
+.myPic {
+  object-fit: contain;
+  position: relative;
+  width: 100%;
+  bottom: 4rem;
+}
+
+#portfolioLogo {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#portfolioLogo:hover {
+  color: rgb(255, 208, 0);
+}
+
+#linkedinLogo {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#linkedinLogo:hover {
+  color: rgb(0, 60, 255);
+}
+
+#githubLogo {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#githubLogo:hover {
+  color: blueviolet;
+}
+
+.techLogo {
+  height: 4rem;
+  object-fit: contain;
+}

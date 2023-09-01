@@ -17,6 +17,7 @@ function Sidebar({ user }) {
   return (
     <>
       <div id="sidebar" className="text-center">
+        <h2>Jujutsu Cards</h2>
         <Link to={"/editProfile"}>
           <img
             id="homePic"
@@ -34,7 +35,7 @@ function Sidebar({ user }) {
         <Link className="no-underline" to={"/store"}>
           <h5 className="tw mt-5 sidebarLink">Store</h5>
         </Link>
-        <Link className="no-underline" to={"/"}>
+        <Link className="no-underline" to={"/project"}>
           <h5 className="tw mt-5 sidebarLink">About Project</h5>
         </Link>
         <span onClick={handleLogout} className="btn btn-danger sidebarLogout">
