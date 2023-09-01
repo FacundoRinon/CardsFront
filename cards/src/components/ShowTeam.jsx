@@ -1,7 +1,9 @@
 import "./showTeam.css";
 import "atropos/css";
 import Atropos from "atropos";
-import { useEffect } from "react";
+import Example from "./CharacterModal";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 function ShowTeam({ slotA, slotB, slotC }) {
   useEffect(() => {
@@ -10,7 +12,16 @@ function ShowTeam({ slotA, slotB, slotC }) {
     });
   }, []);
 
-  console.log(slotA);
+  // const user = useSelector((state) => state.user);
+
+  const [trigger, setTrigger] = useState(false);
+  const [modalClosed, setModalClosed] = useState(true);
+  const [teamMemberModal, setTeamMemberModal] = useState(null);
+
+  const handleModalClose = () => {
+    setTrigger(false);
+    setModalClosed(true);
+  };
 
   return (
     <>
@@ -31,7 +42,13 @@ function ShowTeam({ slotA, slotB, slotC }) {
                     src={slotA.character}
                     alt="slot A"
                     data-atropos-offset="5"
-                    // onClick={}
+                    onClick={() => {
+                      if (modalClosed) {
+                        setTeamMemberModal(slotA);
+                        setTrigger(true);
+                        setModalClosed(false);
+                      }
+                    }}
                   />
                 )}
                 {slotB && (
@@ -40,6 +57,13 @@ function ShowTeam({ slotA, slotB, slotC }) {
                     src={slotB.character}
                     alt="slot A"
                     data-atropos-offset="10"
+                    onClick={() => {
+                      if (modalClosed) {
+                        setTeamMemberModal(slotB);
+                        setTrigger(true);
+                        setModalClosed(false);
+                      }
+                    }}
                   />
                 )}
                 {slotC && (
@@ -48,12 +72,28 @@ function ShowTeam({ slotA, slotB, slotC }) {
                     src={slotC.character}
                     alt="slot A"
                     data-atropos-offset="7"
+                    onClick={() => {
+                      if (modalClosed) {
+                        setTeamMemberModal(slotC);
+                        setTrigger(true);
+                        setModalClosed(false);
+                      }
+                    }}
                   />
                 )}
               </div>
             </div>
           </div>
         </div>
+        {teamMemberModal && (
+          <Example
+            className="characterModal"
+            card={teamMemberModal}
+            context={"/team"}
+            trigger={trigger}
+            onClose={handleModalClose}
+          />
+        )}
       </div>
     </>
   );

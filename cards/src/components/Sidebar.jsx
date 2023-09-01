@@ -17,7 +17,7 @@ function Sidebar({ user }) {
   return (
     <>
       <div id="sidebar" className="text-center">
-        <h2>Jujutsu Cards</h2>
+        <h2 className="mt-3">Jujutsu Cards</h2>
         <Link to={"/editProfile"}>
           <img
             id="homePic"
