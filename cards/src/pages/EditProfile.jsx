@@ -157,7 +157,10 @@ function EditProfile() {
                 </div>
               </div>
             </div>
-            <button id="editProfileSaveButton" className="btn rounded-pill">
+            <button
+              id="editProfileSaveButton"
+              className="btn rounded-pill mb-4"
+            >
               Save
             </button>
           </form>

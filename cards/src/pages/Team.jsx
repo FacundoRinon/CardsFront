@@ -51,33 +51,7 @@ function Team() {
         <div className="row justify-content-center mb-5">
           <ShowTeam slotA={team[0]} slotB={team[1]} slotC={team[2]} />
         </div>
-        {/* <div className="row">
-          {team.length >= 1 ? (
-            <Card key={team[0]._id} card={team[0]} context={"/team"} />
-          ) : (
-            <div className="col-8 col-md-6 col-lg-3 col-xl-3 text-center team-member">
-              <i className="bi bi-file-plus"></i>
-              <p>Team member 1</p>
-            </div>
-          )}
 
-          {team.length >= 2 ? (
-            <Card key={team[1]._id} card={team[1]} context={"/team"} />
-          ) : (
-            <div className="col-8 col-md-6 col-lg-3 col-xl-3 text-center team-member">
-              <i className="bi bi-file-plus"></i>
-              <p>Team member 2</p>
-            </div>
-          )}
-          {team.length >= 3 ? (
-            <Card key={team[2]._id} card={team[2]} context={"/team"} />
-          ) : (
-            <div className="col-8 col-md-6 col-lg-3 col-xl-3 text-center team-member">
-              <i className="bi bi-file-plus"></i>
-              <p>Team member 3</p>
-            </div>
-          )}
-        </div> */}
         <div className="row d-flex text-center">
           <h3>Points per hour</h3>
           <div className="col">

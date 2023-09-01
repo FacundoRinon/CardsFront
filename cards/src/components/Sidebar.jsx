@@ -30,13 +30,13 @@ function Sidebar({ user }) {
         </h3>
         <p>@{user.username}</p>
         <Link className="no-underline" to={"/team"}>
-          <h5 className="tw mt-5 sidebarLink">Team</h5>
+          <h5 className="tw sidebarLink">Team</h5>
         </Link>
         <Link className="no-underline" to={"/store"}>
-          <h5 className="tw mt-5 sidebarLink">Store</h5>
+          <h5 className="tw sidebarLink">Store</h5>
         </Link>
         <Link className="no-underline" to={"/project"}>
-          <h5 className="tw mt-5 sidebarLink">About Project</h5>
+          <h5 className="tw sidebarLink">About Project</h5>
         </Link>
         <span onClick={handleLogout} className="btn btn-danger sidebarLogout">
           Log Out

@@ -1,12 +1,15 @@
 import "./aboutProject.css";
 import "atropos/css";
 import Atropos from "atropos";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function AboutProject() {
-  const myAtropos = Atropos({
-    el: ".my-atropos3",
-  });
+  useEffect(() => {
+    const myAtropos = Atropos({
+      el: ".my-atropos3",
+    });
+  }, []);
 
   return (
     <>
@@ -39,9 +42,9 @@ function AboutProject() {
             </p>
           </div>
         </div>
-        <div className="row text-center mt-5 mb-5">
+        <div className="row mt-5 mb-5">
           <h2 className="mb-4">Duration</h2>
-          <div className="col">
+          <div className="col-12 col-sm-6">
             <p>
               The development time for this project was approximately 2 weeks,
               during which I worked from Monday to Friday for approximately 5
@@ -49,7 +52,7 @@ function AboutProject() {
             </p>
           </div>
         </div>
-        <div className="row text-center mt-5">
+        <div className="row mt-5">
           <h2 className="mb-4">About me</h2>
           <div style={{ textAlign: "justify" }} className="col-12 col-md-6">
             <p>
@@ -94,7 +97,7 @@ function AboutProject() {
               </p>
             </Link>
           </div>
-          <div className="col-6">
+          <div className="col-12 col-md-6 d-flex justify-content-center">
             <div class="atropos my-atropos3">
               <div class="atropos-scale">
                 <div class="atropos-rotate">

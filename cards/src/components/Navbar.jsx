@@ -1,13 +1,16 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 function Navbar() {
+  const user = useSelector((state) => state.user);
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
           <h3 className="tw">
             <Link to={"/editProfile"} className="no-underline text-white">
-              Facundo Riñón
+              Jujutsu cards
             </Link>
           </h3>
 
@@ -27,12 +30,21 @@ function Navbar() {
               <Link
                 className="nav-link active"
                 aria-current="page"
+                to={"/editProfile"}
+              >
+                {user.firstname} {user.lastname}
+                <img
+                  src={`${import.meta.env.VITE_IMG_URL}/myPic.jpeg`}
+                  alt=""
+                  className="navbarPic"
+                />
+              </Link>
+              <Link
+                className="nav-link active"
+                aria-current="page"
                 to={"/team"}
               >
                 Team
-              </Link>
-              <Link className="nav-link active" aria-current="page" to={"/"}>
-                Collection
               </Link>
               <Link
                 className="nav-link active"
@@ -40,6 +52,13 @@ function Navbar() {
                 to={"/store"}
               >
                 Store
+              </Link>
+              <Link
+                className="nav-link active"
+                aria-current="page"
+                to={"/project"}
+              >
+                About project
               </Link>
             </div>
           </div>

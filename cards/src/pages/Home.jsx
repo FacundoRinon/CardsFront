@@ -70,9 +70,17 @@ function Home() {
             alt=""
             className="wallpaper"
           />
-          <p className="pointSpace1">Physical power: {user.physicalPower}</p>
-          <p className="pointSpace2">Intelligence: {user.intelligencePoints}</p>
-          <p className="pointSpace3">Cursed power: {user.cursedPower}</p>
+          <div className="pointSpace">
+            <small className="homePoints">
+              Physical power: {user.physicalPower}
+            </small>
+            <small className="homePoints">
+              Intelligence: {user.intelligencePoints}
+            </small>
+            <small className="homePoints">
+              Cursed power: {user.cursedPower}
+            </small>
+          </div>
         </div>
       </div>
     </>

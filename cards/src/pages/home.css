@@ -4,37 +4,28 @@
   height: 100vh;
 }
 
-.pointSpace1 {
+.navbarPic {
+  object-fit: cover;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  margin-left: 1rem;
+}
+
+.pointSpace {
   bottom: 0;
-  left: 25%;
+  left: 40%;
   margin: 1rem;
-  padding: 1rem;
+  padding: 0.5rem;
   position: absolute;
   border: 1px solid white;
   border-radius: 10px;
   background-color: black;
 }
 
-.pointSpace2 {
-  bottom: 0;
-  left: 50%;
-  margin: 1rem;
-  padding: 1rem;
-  position: absolute;
-  border: 1px solid white;
-  border-radius: 10px;
-  background-color: black;
-}
-
-.pointSpace3 {
-  bottom: 0;
-  left: 75%;
-  margin: 1rem;
-  padding: 1rem;
-  position: absolute;
-  border: 1px solid white;
-  border-radius: 10px;
-  background-color: black;
+.homePoints {
+  font-size: 0.8rem;
+  display: block;
 }
 
 @media (max-width: 575px) {

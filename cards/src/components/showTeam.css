@@ -1,3 +1,41 @@
+@media (max-width: 991px) {
+  .my-atropos2 {
+    width: 100%;
+    height: 20rem;
+  }
+
+  #teamBackground {
+    position: relative;
+    bottom: 70px;
+    height: 25rem;
+    object-fit: contain;
+  }
+
+  #slotA {
+    position: relative;
+    bottom: 280px;
+    height: 11rem;
+    object-fit: contain;
+    z-index: 10;
+  }
+
+  #slotB {
+    position: relative;
+    bottom: 270px;
+    height: 11rem;
+    object-fit: contain;
+    z-index: 10;
+  }
+
+  #slotC {
+    position: relative;
+    bottom: 280px;
+    height: 11rem;
+    object-fit: contain;
+    z-index: 7;
+  }
+}
+
 @media (max-width: 576px) {
   .my-atropos2 {
     width: 100%;
@@ -36,31 +74,70 @@
   }
 }
 
-@media (min-width: 577px) {
+@media (max-width: 365px) {
   .my-atropos2 {
-    width: 70%;
+    width: 100%;
+    height: 15rem;
+  }
+
+  #teamBackground {
+    position: relative;
+    bottom: 110px;
+    height: 25rem;
+    object-fit: contain;
+  }
+
+  #slotA {
+    position: relative;
+    bottom: 320px;
+    height: 8rem;
+    object-fit: contain;
+    z-index: 10;
+  }
+
+  #slotB {
+    position: relative;
+    bottom: 320px;
+    height: 8rem;
+    object-fit: contain;
+    z-index: 10;
+  }
+
+  #slotC {
+    position: relative;
+    bottom: 320px;
+    height: 8rem;
+    object-fit: contain;
+    z-index: 7;
+  }
+}
+
+@media (min-width: 992px) {
+  .my-atropos2 {
+    width: 80%;
     height: 25rem;
   }
 
   #teamBackground {
     width: 100%;
     position: relative;
-    bottom: 70px;
+    bottom: 105px;
   }
 
   #slotA {
     width: 20%;
     position: relative;
-    bottom: 320px;
+    bottom: 390px;
     height: 15rem;
     object-fit: contain;
     z-index: 10;
+    left: 60px;
   }
 
   #slotB {
     width: 20%;
     position: relative;
-    bottom: 320px;
+    bottom: 380px;
     height: 15rem;
     object-fit: contain;
     z-index: 10;
@@ -69,9 +146,10 @@
   #slotC {
     width: 20%;
     position: relative;
-    bottom: 320px;
+    bottom: 390px;
     height: 15rem;
     object-fit: contain;
     z-index: 7;
+    right: 60px;
   }
 }
