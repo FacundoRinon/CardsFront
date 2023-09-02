@@ -1,4 +1,4 @@
-import Card from "../components/card";
+import Card from "../components/Card";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import axios from "axios";
