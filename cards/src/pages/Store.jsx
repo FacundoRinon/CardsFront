@@ -51,15 +51,13 @@ function Store() {
     );
 
   const pointToPurchase =
-    cards &&
-    cards.filter(
+    lockedCards &&
+    lockedCards.filter(
       (card) =>
         card.cost[0] <= user.physicalPower &&
         card.cost[1] <= user.intelligencePoints &&
         card.cost[2] <= user.cursedPower
     );
-
-  // const cardsCopy = [...cards];
 
   const mostPhysical = [...cards].sort(
     (a, b) => b.physicalPower - a.physicalPower
