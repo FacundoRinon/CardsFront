@@ -45,13 +45,13 @@ function Login() {
       <div className="d-flex">
         <div className="container">
           <div className="row">
-            <div className="col-8 loginWall">
+            <div className="col-12 col-sm-8 loginWall">
               <img
                 src={`${import.meta.env.VITE_IMG_URL}/loginwall.webp`}
                 alt=""
               />
             </div>
-            <div className="col-4 text-center loginForm">
+            <div className="col-12 col-sm-4 text-center loginForm">
               <h1 className="title mb-5">Welcome Back!</h1>
               <form
                 className="w-75"
@@ -84,7 +84,7 @@ function Login() {
                   />
                 </div>
 
-                <button type="submit" className="btn btn-primary mt-3 mb-4">
+                <button type="submit" className="btn btn-primary mt-2 mb-2">
                   Login
                 </button>
                 <p>Dont have an account?</p>

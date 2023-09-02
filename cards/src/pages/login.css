@@ -3,17 +3,36 @@ body {
   color: white;
 }
 
-.loginForm {
-  padding-top: 10vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+@media (max-width: 576px) {
+  .loginWall img {
+    width: 100%;
+    height: 40vh;
+    padding-top: 10vh;
+    object-fit: cover;
+  }
+
+  .loginForm {
+    padding-top: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 }
 
-.loginWall img {
-  width: 100%;
-  height: 80vh;
-  padding-top: 10vh;
-  object-fit: cover;
+@media (min-width: 577px) {
+  .loginWall img {
+    width: 100%;
+    height: 80vh;
+    padding-top: 10vh;
+    object-fit: cover;
+  }
+
+  .loginForm {
+    padding-top: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 }

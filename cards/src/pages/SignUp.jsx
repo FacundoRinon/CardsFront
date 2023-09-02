@@ -61,13 +61,13 @@ function SignUp() {
       <div className="d-flex">
         <div className="container">
           <div className="row">
-            <div className="col-8 loginWall">
+            <div className="col-12 col-sm-8 loginWall">
               <img
                 src={`${import.meta.env.VITE_IMG_URL}/loginwall.webp`}
                 alt=""
               />
             </div>
-            <div className="col-4 text-center loginForm">
+            <div className="col-12 col-sm-4 text-center loginForm">
               <h1 className="title mb-5">Start collecting!</h1>
 
               <div className="row d-flex justify-content-center">
@@ -158,7 +158,9 @@ function SignUp() {
                   <ToastContainer />
                 </form>
                 <p className="mt-3">Already have an account?</p>
-                <Link to="/login">Login!</Link>
+                <Link className="mb-3" to="/login">
+                  Login!
+                </Link>
               </div>
             </div>
           </div>
