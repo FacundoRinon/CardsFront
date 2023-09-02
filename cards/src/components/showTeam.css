@@ -90,7 +90,7 @@
   #slotA {
     position: relative;
     bottom: 320px;
-    height: 8rem;
+    height: 7rem;
     object-fit: contain;
     z-index: 10;
   }
