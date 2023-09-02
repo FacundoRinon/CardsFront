@@ -1,21 +1,14 @@
 import "./team.css";
-import { useDispatch } from "react-redux";
 import Card from "../components/Card";
-import { getCards } from "../redux/cardsSlice";
 import { useSelector } from "react-redux/es/hooks/useSelector";
-import { useEffect } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import ShowTeam from "../components/ShowTeam";
 
 function Team() {
   const user = useSelector((state) => state.user);
-  const cards = useSelector((state) => state.cards);
 
   const team = user.team;
   const unlocked = user.unlockedCards;
-
-  const dispatch = useDispatch();
 
   let totalPhysicalPower = 0;
   let totalIntelligence = 0;
@@ -69,7 +62,9 @@ function Team() {
               return <Card key={card._id} card={card} context={"/team"} />;
             })
           ) : (
-            <p>No hay cartas</p>
+            <h6 className="text-center mt-3">
+              Start recruiting in the store!!
+            </h6>
           )}
         </div>
       </div>

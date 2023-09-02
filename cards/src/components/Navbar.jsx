@@ -1,8 +1,21 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { removeCards } from "../redux/cardsSlice";
+import { removeToken } from "../redux/userSlice";
 
 function Navbar() {
   const user = useSelector((state) => state.user);
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  async function handleLogout() {
+    dispatch(removeToken());
+    dispatch(removeCards());
+    navigate("/login");
+  }
 
   return (
     <>
@@ -60,6 +73,12 @@ function Navbar() {
               >
                 About project
               </Link>
+              <span
+                onClick={handleLogout}
+                className="btn btn-danger sidebarLogout"
+              >
+                Log Out
+              </span>
             </div>
           </div>
         </div>
