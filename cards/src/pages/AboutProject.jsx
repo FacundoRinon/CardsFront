@@ -116,14 +116,14 @@ function AboutProject() {
         </div>
         <div className="row text-center mt-5 mb-5">
           <h2 className="mb-4">Technologies</h2>
-          <div className="col-12 col-sm-6">
+          <div className="col-12 col-sm-6 mt-3 mb-3">
             <h4>Front</h4>
             <p style={{ textAlign: "justify" }}>
               For the development of the application on the front-end, I used
               the technologies Redux.js and React.js, which I want to continue
               practicing as I find them very effective and enjoyable to use.
             </p>
-            <div className="row">
+            <div className="row mt-3">
               <div className="col">
                 <img
                   className="techLogo"
@@ -158,14 +158,14 @@ function AboutProject() {
               </div>
             </div>
           </div>
-          <div className="col-12 col-sm-6">
+          <div className="col-12 col-sm-6 mt-3 mb-3">
             <h4>Back</h4>
             <p style={{ textAlign: "justify" }}>
               For the back-end, I developed a Rest API using the technologies
               Node.js and Express.js, which was powered by a non-relational
               database with MongoDB technology.
             </p>
-            <div className="row">
+            <div className="row mt-3">
               <div className="col">
                 <img
                   className="techLogo"

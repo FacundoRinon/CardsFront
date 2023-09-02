@@ -50,6 +50,29 @@ function Store() {
         )
     );
 
+  const pointToPurchase =
+    cards &&
+    cards.filter(
+      (card) =>
+        card.cost[0] <= user.physicalPower &&
+        card.cost[1] <= user.intelligencePoints &&
+        card.cost[2] <= user.cursedPower
+    );
+
+  // const cardsCopy = [...cards];
+
+  const mostPhysical = [...cards].sort(
+    (a, b) => b.physicalPower - a.physicalPower
+  );
+
+  const mostIntelligence = [...cards].sort(
+    (a, b) => b.intelligence - a.intelligence
+  );
+
+  const mostCursedPower = [...cards].sort(
+    (a, b) => b.cursedPower - a.cursedPower
+  );
+
   return (
     <>
       <div className="container">
@@ -67,25 +90,78 @@ function Store() {
         </div>
         <div className="container">
           <div className="row">
-            <Dropdown>
-              <Dropdown.Toggle variant="success" id="dropdown-basic">
-                State
-              </Dropdown.Toggle>
+            <div className="col-4">
+              <Dropdown>
+                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                  State
+                </Dropdown.Toggle>
 
-              <Dropdown.Menu>
-                <Dropdown.Item onClick={() => setFilteredCards(possesionCards)}>
-                  Unlocked
-                </Dropdown.Item>
-                <Dropdown.Divider />
-                <Dropdown.Item onClick={() => setFilteredCards(lockedCards)}>
-                  Locked
-                </Dropdown.Item>
-                <Dropdown.Divider />
-                <Dropdown.Item onClick={() => setFilteredCards(cards)}>
-                  All
-                </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
+                <Dropdown.Menu>
+                  <Dropdown.Item
+                    onClick={() => setFilteredCards(possesionCards)}
+                  >
+                    Unlocked
+                  </Dropdown.Item>
+                  <Dropdown.Divider />
+                  <Dropdown.Item onClick={() => setFilteredCards(lockedCards)}>
+                    Locked
+                  </Dropdown.Item>
+                  <Dropdown.Divider />
+                  <Dropdown.Item onClick={() => setFilteredCards(cards)}>
+                    All
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </div>
+            <div className="col-4">
+              <Dropdown>
+                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                  Availability
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item
+                    onClick={() => setFilteredCards(pointToPurchase)}
+                  >
+                    Available to purchase
+                  </Dropdown.Item>
+
+                  <Dropdown.Divider />
+                  <Dropdown.Item onClick={() => setFilteredCards(cards)}>
+                    All
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </div>
+            <div className="col-4">
+              <Dropdown>
+                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                  Order by
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item onClick={() => setFilteredCards(mostPhysical)}>
+                    Physical power
+                  </Dropdown.Item>
+                  <Dropdown.Divider />
+                  <Dropdown.Item
+                    onClick={() => setFilteredCards(mostIntelligence)}
+                  >
+                    Intelligece
+                  </Dropdown.Item>
+                  <Dropdown.Divider />
+                  <Dropdown.Item
+                    onClick={() => setFilteredCards(mostCursedPower)}
+                  >
+                    Cursed Power
+                  </Dropdown.Item>
+                  <Dropdown.Divider />
+                  <Dropdown.Item onClick={() => setFilteredCards(cards)}>
+                    All
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </div>
           </div>
         </div>
         <div className="row d-flex mb-5">
