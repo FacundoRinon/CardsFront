@@ -98,10 +98,10 @@ function AboutProject() {
             </Link>
           </div>
           <div className="col-12 col-md-6 d-flex justify-content-center">
-            <div class="atropos my-atropos3">
-              <div class="atropos-scale">
-                <div class="atropos-rotate">
-                  <div class="atropos-inner">
+            <div className="atropos my-atropos3">
+              <div className="atropos-scale">
+                <div className="atropos-rotate">
+                  <div className="atropos-inner">
                     <img
                       src={`${import.meta.env.VITE_IMG_URL}/myPic.jpeg`}
                       className="myPic"
