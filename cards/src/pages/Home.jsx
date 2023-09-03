@@ -47,12 +47,10 @@ function Home() {
 
   useEffect(() => {
     gettingCards();
-    console.log("Actualiza data de cartas");
   }, [user.team]);
 
   useEffect(() => {
     getUserInfo();
-    console.log("Actualiza data de user");
   }, []);
 
   return (
