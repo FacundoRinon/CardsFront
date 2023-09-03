@@ -46,7 +46,11 @@ function Navbar() {
                 to={"/editProfile"}
               >
                 {user.firstname} {user.lastname}
-                <img src={user.avatar} alt="" className="navbarPic" />
+                <img
+                  src={`${import.meta.env.VITE_IMG_URL}/${user.avatar}`}
+                  alt=""
+                  className="navbarPic"
+                />
               </Link>
               <Link
                 className="nav-link active"

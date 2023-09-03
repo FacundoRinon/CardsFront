@@ -52,7 +52,7 @@ function Login() {
               />
             </div>
             <div className="col-12 col-sm-4 text-center loginForm">
-              <h1 className="title mb-5">Welcome Back!</h1>
+              <h1 className="title mb-5">Welcome sorcerer!</h1>
               <form
                 className="w-75"
                 method="post"
