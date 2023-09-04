@@ -63,21 +63,26 @@ function Home() {
           <div className="d-block d-sm-none">
             <Navbar />
           </div>
-          <img
-            src={`${import.meta.env.VITE_IMG_URL}/jujutsuWallpaper.jpg`}
-            alt=""
-            className="wallpaper"
-          />
-          <div className="pointSpace">
-            <small className="homePoints">
-              Physical power: {user.physicalPower}
-            </small>
-            <small className="homePoints">
-              Intelligence: {user.intelligencePoints}
-            </small>
-            <small className="homePoints">
-              Cursed power: {user.cursedPower}
-            </small>
+          <div className="div picContain">
+            <img
+              src={`${import.meta.env.VITE_IMG_URL}/jujutsuWallpaper.jpg`}
+              alt=""
+              className="wallpaper"
+            />
+            <div className="div infoLogo">
+              <i class="bi bi-info-circle-fill "></i>
+            </div>
+            <div className="pointSpace">
+              <small className="homePoints">
+                Physical power: {user.physicalPower}
+              </small>
+              <small className="homePoints">
+                Intelligence: {user.intelligencePoints}
+              </small>
+              <small className="homePoints">
+                Cursed power: {user.cursedPower}
+              </small>
+            </div>
           </div>
         </div>
       </div>
