@@ -55,7 +55,7 @@ function Home() {
 
   return (
     <>
-      <div className="d-flex">
+      <div className="d-flex homePic">
         <div className="col-2 sidebar">
           <Sidebar user={user} />
         </div>
@@ -70,7 +70,7 @@ function Home() {
               className="wallpaper"
             />
             <div className="div infoLogo">
-              <i class="bi bi-info-circle-fill "></i>
+              <i className="bi bi-info-circle-fill "></i>
             </div>
             <div className="pointSpace">
               <small className="homePoints">
