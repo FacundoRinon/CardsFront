@@ -30,6 +30,13 @@ function Card({ card, context }) {
     (unlockedCard) => unlockedCard._id === card._id
   );
 
+  const pointToPurchase =
+    card.cost[0] <= user.physicalPower &&
+    card.cost[1] <= user.intelligencePoints &&
+    card.cost[2] <= user.cursedPower;
+
+  console.log("points", pointToPurchase);
+
   return (
     <>
       <div
@@ -67,11 +74,15 @@ function Card({ card, context }) {
                 >
                   {card.name}
                 </h5>
-                {!cardInPossesion && (
+                {!cardInPossesion && pointToPurchase ? (
+                  <h2 id="recruitText" data-atropos-offset="15">
+                    Recruit it
+                  </h2>
+                ) : !cardInPossesion ? (
                   <h2 id="lockedText" data-atropos-offset="15">
                     Locked
                   </h2>
-                )}
+                ) : null}
               </div>
             </div>
           </div>

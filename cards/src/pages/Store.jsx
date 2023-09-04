@@ -91,7 +91,35 @@ function Store() {
           <div className="row">
             <div className="filterButton">
               <Dropdown>
-                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                <Dropdown.Toggle
+                  className="filterSize"
+                  variant="success"
+                  id="dropdown-basic"
+                >
+                  Availability
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item
+                    onClick={() => setFilteredCards(pointToPurchase)}
+                  >
+                    Available to purchase
+                  </Dropdown.Item>
+
+                  <Dropdown.Divider />
+                  <Dropdown.Item onClick={() => setFilteredCards(cards)}>
+                    All
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </div>
+            <div className="filterButton">
+              <Dropdown>
+                <Dropdown.Toggle
+                  className="filterSize"
+                  variant="success"
+                  id="dropdown-basic"
+                >
                   State
                 </Dropdown.Toggle>
 
@@ -112,29 +140,14 @@ function Store() {
                 </Dropdown.Menu>
               </Dropdown>
             </div>
+
             <div className="filterButton">
               <Dropdown>
-                <Dropdown.Toggle variant="success" id="dropdown-basic">
-                  Availability
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu>
-                  <Dropdown.Item
-                    onClick={() => setFilteredCards(pointToPurchase)}
-                  >
-                    Available to purchase
-                  </Dropdown.Item>
-
-                  <Dropdown.Divider />
-                  <Dropdown.Item onClick={() => setFilteredCards(cards)}>
-                    All
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-            </div>
-            <div className="filterButton">
-              <Dropdown>
-                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                <Dropdown.Toggle
+                  className="filterSize"
+                  variant="success"
+                  id="dropdown-basic"
+                >
                   Order by
                 </Dropdown.Toggle>
 

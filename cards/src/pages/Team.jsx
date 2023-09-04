@@ -70,9 +70,14 @@ function Team() {
               return <Card key={card._id} card={card} context={"/team"} />;
             })
           ) : (
-            <h6 className="text-center mt-3">
-              Start recruiting in the store!!
-            </h6>
+            <div className="div">
+              <h4 className="text-center mt-3">
+                Start recruiting in the store!!
+              </h4>
+              <h6 className="text-center">
+                <Link to={"/store"}>Store</Link>
+              </h6>
+            </div>
           )}
         </div>
       </div>
