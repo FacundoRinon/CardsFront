@@ -40,6 +40,29 @@ function Login() {
     }
   }
 
+  async function handleInvited(event) {
+    event.preventDefault();
+    const response = await axios({
+      method: "POST",
+      url: `${import.meta.env.VITE_API_URL}/user/login`,
+      data: { username: "InvitedUser", password: "jeje" },
+    });
+    if (response.data.token) {
+      dispatch(setToken(response.data));
+      navigate("/");
+    } else {
+      toast.error(
+        <div>
+          <span className="Toastify__toast--error"></span>
+          Invalid credentials <span> </span>
+        </div>,
+        {
+          position: toast.POSITION.TOP_CENTER,
+        }
+      );
+    }
+  }
+
   return (
     <>
       <div className="d-flex">
@@ -83,12 +106,23 @@ function Login() {
                     onChange={(event) => setPasswordValue(event.target.value)}
                   />
                 </div>
+                <div className="row justify-content-center">
+                  <h6
+                    className="btn btn-secondary mt-2 mb-2 w-75"
+                    onClick={handleInvited}
+                  >
+                    Login as invited
+                  </h6>
 
-                <button type="submit" className="btn btn-primary mt-2 mb-2">
-                  Login
-                </button>
-                <p>Dont have an account?</p>
-                <Link to={"/signUp"}>SignUp</Link>
+                  <button
+                    type="submit"
+                    className="btn btn-primary mt-2 mb-2 w-75"
+                  >
+                    Login
+                  </button>
+                  <p>Dont have an account?</p>
+                  <Link to={"/signUp"}>SignUp</Link>
+                </div>
               </form>
               <ToastContainer />
             </div>
