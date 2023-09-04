@@ -30,29 +30,58 @@ function RulesModal({ trigger, onClose }) {
           closeVariant="white"
           closeButton
         >
-          <Modal.Title>How to Collect</Modal.Title>
+          <Modal.Title>How to Collect ({page}/4)</Modal.Title>
         </Modal.Header>
         <Modal.Body className="characterModal">
           {page === 1 && (
-            <p>
-              To obtain new cards, you must recruit sorcerers in the store. You
-              can use filters to find sorcerers that match the amount of points
-              you have.
-            </p>
+            <div className="div">
+              <p>
+                To obtain new cards, you must recruit sorcerers in the store.
+                You can use filters to find sorcerers that match the amount of
+                points you have.
+              </p>
+              <img
+                src={`${import.meta.env.VITE_IMG_URL}/ruleModalPage1.png`}
+                alt=""
+                className="ruleModalPic"
+              />
+            </div>
           )}
           {page === 2 && (
-            <p>
-              Once you recruit sorcerers, you should add them to your team,
-              which can have up to 3 members.
-            </p>
+            <div className="div">
+              <p>
+                Once you recruit sorcerers, you should add them to your team,
+                which can have up to 3 members.
+              </p>
+              <img
+                src={`${import.meta.env.VITE_IMG_URL}/rulesModalPage2.png`}
+                alt=""
+                className="ruleModalPic"
+              />
+            </div>
           )}
           {page === 3 && (
-            <p>
-              Each sorcerer earns points based on their stats every 10 minutes.
-            </p>
+            <div className="div">
+              <p>
+                Each sorcerer earns points based on their stats every 10
+                minutes.
+              </p>
+              <img
+                src={`${import.meta.env.VITE_IMG_URL}/ruleModalPage3.png`}
+                alt=""
+                className="ruleModalPic"
+              />
+            </div>
           )}
           {page === 4 && (
-            <p>You can use those points to recruit more sorcerers.</p>
+            <div className="div">
+              <p>You can use those points to recruit more sorcerers.</p>
+              <img
+                src={`${import.meta.env.VITE_IMG_URL}/ruleModalPage4.png`}
+                alt=""
+                className="ruleModalPic"
+              />
+            </div>
           )}
         </Modal.Body>
         <Modal.Footer className="characterModal">
