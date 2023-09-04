@@ -59,7 +59,7 @@
 
   #slotB {
     position: relative;
-    bottom: 320px;
+    bottom: 310px;
     height: 13rem;
     object-fit: contain;
     z-index: 10;
@@ -97,7 +97,7 @@
 
   #slotB {
     position: relative;
-    bottom: 320px;
+    bottom: 310px;
     height: 8rem;
     object-fit: contain;
     z-index: 10;
@@ -115,7 +115,7 @@
 @media (min-width: 992px) {
   .my-atropos2 {
     width: 80%;
-    height: 25rem;
+    height: 20rem;
   }
 
   #teamBackground {
@@ -137,7 +137,7 @@
   #slotB {
     width: 20%;
     position: relative;
-    bottom: 380px;
+    bottom: 360px;
     height: 15rem;
     object-fit: contain;
     z-index: 10;
@@ -151,5 +151,43 @@
     object-fit: contain;
     z-index: 7;
     right: 60px;
+  }
+}
+
+@media (min-width: 1076px) {
+  .my-atropos2 {
+    width: 85%;
+    height: 25rem;
+  }
+
+  #teamBackground {
+    position: relative;
+    bottom: 75px;
+    height: 30rem;
+    object-fit: cover;
+  }
+
+  #slotA {
+    position: relative;
+    bottom: 340px;
+    height: 15rem;
+    object-fit: contain;
+    z-index: 10;
+  }
+
+  #slotB {
+    position: relative;
+    bottom: 330px;
+    height: 15rem;
+    object-fit: contain;
+    z-index: 10;
+  }
+
+  #slotC {
+    position: relative;
+    bottom: 340px;
+    height: 15rem;
+    object-fit: contain;
+    z-index: 7;
   }
 }

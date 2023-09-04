@@ -48,7 +48,7 @@ function Navbar() {
                 {user.firstname} {user.lastname}
                 <img
                   src={`${import.meta.env.VITE_IMG_URL}/${user.avatar}`}
-                  alt=""
+                  alt="Pic"
                   className="navbarPic"
                 />
               </Link>

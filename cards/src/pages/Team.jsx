@@ -45,12 +45,20 @@ function Team() {
           <ShowTeam slotA={team[0]} slotB={team[1]} slotC={team[2]} />
         </div>
 
-        <div className="row d-flex text-center">
-          <h3>Points per hour</h3>
-          <div className="col">
-            <p>Physical power: {totalPhysicalPower}</p>
-            <p>Intelligence: {totalIntelligence}</p>
-            <p>Cursed power: {totalCursedPower}</p>
+        <div className="row text-center">
+          <div className="col-12 col-sm-6 teamInfo">
+            <h3>Points per hour</h3>
+            <div className="col">
+              <p>Physical power: {totalPhysicalPower}</p>
+              <p>Intelligence: {totalIntelligence}</p>
+              <p>Cursed power: {totalCursedPower}</p>
+            </div>
+          </div>
+          <div className="col-12 col-sm-6 teamInfo">
+            <h3>Team members</h3>
+            {user.team[0] ? <p>{user.team[0].name}</p> : <p>Slot 1 - Empty</p>}
+            {user.team[1] ? <p>{user.team[1].name}</p> : <p>Slot 2 - Empty</p>}
+            {user.team[2] ? <p>{user.team[2].name}</p> : <p>Slot 3 - Empty</p>}
           </div>
         </div>
         <div className="row text-center">
