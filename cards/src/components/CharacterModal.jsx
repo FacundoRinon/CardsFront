@@ -10,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { addCard, toggleTeam } from "../redux/userSlice";
 
-function Example({ card, context, trigger, onClose }) {
+function CharacterModal({ card, context, trigger, onClose }) {
   const user = useSelector((state) => state.user);
   const [show, setShow] = useState(false);
 
@@ -211,4 +211,4 @@ function Example({ card, context, trigger, onClose }) {
   );
 }
 
-export default Example;
+export default CharacterModal;

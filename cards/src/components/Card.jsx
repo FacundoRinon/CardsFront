@@ -3,8 +3,7 @@ import "atropos/css";
 import Atropos from "atropos";
 import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
-
-import Example from "./CharacterModal";
+import CharacterModal from "./CharacterModal";
 
 function Card({ card, context }) {
   const user = useSelector((state) => state.user);
@@ -77,7 +76,7 @@ function Card({ card, context }) {
             </div>
           </div>
         </div>
-        <Example
+        <CharacterModal
           className="characterModal"
           card={card}
           context={context}

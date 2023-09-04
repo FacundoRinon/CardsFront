@@ -1,9 +1,8 @@
 import "./showTeam.css";
 import "atropos/css";
 import Atropos from "atropos";
-import Example from "./CharacterModal";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import CharacterModal from "./CharacterModal";
 
 function ShowTeam({ slotA, slotB, slotC }) {
   useEffect(() => {
@@ -11,8 +10,6 @@ function ShowTeam({ slotA, slotB, slotC }) {
       el: ".my-atropos2",
     });
   }, []);
-
-  // const user = useSelector((state) => state.user);
 
   const [trigger, setTrigger] = useState(false);
   const [modalClosed, setModalClosed] = useState(true);
@@ -86,7 +83,7 @@ function ShowTeam({ slotA, slotB, slotC }) {
           </div>
         </div>
         {teamMemberModal && (
-          <Example
+          <CharacterModal
             className="characterModal"
             card={teamMemberModal}
             context={"/team"}

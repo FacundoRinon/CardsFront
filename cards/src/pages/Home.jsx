@@ -1,9 +1,9 @@
-import Sidebar from "../components/Sidebar";
 import "./home.css";
-import { useSelector } from "react-redux";
+import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
+import RulesModal from "../components/RulesModal";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { getCards } from "../redux/cardsSlice";
 import { setToken } from "../redux/userSlice";
@@ -12,6 +12,14 @@ function Home() {
   const user = useSelector((state) => state.user);
 
   const dispatch = useDispatch();
+
+  const [trigger, setTrigger] = useState(false);
+  const [modalClosed, setModalClosed] = useState(true);
+
+  const handleModalClose = () => {
+    setTrigger(false);
+    setModalClosed(true);
+  };
 
   const gettingCards = async () => {
     try {
@@ -55,7 +63,7 @@ function Home() {
 
   return (
     <>
-      <div className="d-flex homePic">
+      <div className="d-flex">
         <div className="col-2 sidebar">
           <Sidebar user={user} />
         </div>
@@ -70,7 +78,15 @@ function Home() {
               className="wallpaper"
             />
             <div className="div infoLogo">
-              <i className="bi bi-info-circle-fill "></i>
+              <i
+                className="bi bi-info-circle-fill"
+                onClick={() => {
+                  if (modalClosed) {
+                    setTrigger(true);
+                    setModalClosed(false);
+                  }
+                }}
+              ></i>
             </div>
             <div className="pointSpace">
               <small className="homePoints">
@@ -85,6 +101,7 @@ function Home() {
             </div>
           </div>
         </div>
+        <RulesModal trigger={trigger} onClose={handleModalClose} />
       </div>
     </>
   );
