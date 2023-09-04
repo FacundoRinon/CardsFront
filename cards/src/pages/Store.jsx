@@ -1,3 +1,4 @@
+import "./store.css";
 import Card from "../components/Card";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
@@ -88,7 +89,7 @@ function Store() {
         </div>
         <div className="container">
           <div className="row">
-            <div className="col-4">
+            <div className="filterButton">
               <Dropdown>
                 <Dropdown.Toggle variant="success" id="dropdown-basic">
                   State
@@ -111,7 +112,7 @@ function Store() {
                 </Dropdown.Menu>
               </Dropdown>
             </div>
-            <div className="col-4">
+            <div className="filterButton">
               <Dropdown>
                 <Dropdown.Toggle variant="success" id="dropdown-basic">
                   Availability
@@ -131,7 +132,7 @@ function Store() {
                 </Dropdown.Menu>
               </Dropdown>
             </div>
-            <div className="col-4">
+            <div className="filterButton">
               <Dropdown>
                 <Dropdown.Toggle variant="success" id="dropdown-basic">
                   Order by
