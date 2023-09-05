@@ -56,7 +56,6 @@ function CharacterModal({ card, context, trigger, onClose }) {
           );
         } else {
           dispatch(toggleTeam({ user: user, card: card }));
-          // dispatch(addToTeam({ card: card }));
           toast.success(
             <div>
               <span className="Toastify__toast--success"></span>

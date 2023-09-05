@@ -58,7 +58,13 @@ function Home() {
   }, [user.team]);
 
   useEffect(() => {
-    getUserInfo();
+    if (user.newUser && modalClosed) {
+      setTrigger(true);
+      setModalClosed(false);
+      getUserInfo();
+    } else {
+      getUserInfo();
+    }
   }, []);
 
   return (

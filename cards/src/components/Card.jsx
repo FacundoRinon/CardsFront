@@ -35,8 +35,6 @@ function Card({ card, context }) {
     card.cost[1] <= user.intelligencePoints &&
     card.cost[2] <= user.cursedPower;
 
-  console.log("points", pointToPurchase);
-
   return (
     <>
       <div
@@ -76,7 +74,7 @@ function Card({ card, context }) {
                 </h5>
                 {!cardInPossesion && pointToPurchase ? (
                   <h2 id="recruitText" data-atropos-offset="15">
-                    Recruit it
+                    Recruit
                   </h2>
                 ) : !cardInPossesion ? (
                   <h2 id="lockedText" data-atropos-offset="15">

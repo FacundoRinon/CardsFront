@@ -35,8 +35,6 @@ function SignUp() {
         }
       );
 
-      console.log(response.data);
-
       if (response.data.token) {
         dispatch(setToken(response.data));
         navigate("/");
