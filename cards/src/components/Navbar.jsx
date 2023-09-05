@@ -1,3 +1,4 @@
+import "./navbar.css";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -19,7 +20,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav id="navbar" className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
           <h3 className="tw">
             <Link to={"/editProfile"} className="no-underline text-white">
