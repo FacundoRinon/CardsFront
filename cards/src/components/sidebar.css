@@ -41,7 +41,9 @@
   }
 
   .sidebarLogout {
-    margin-top: 5vh;
+    position: absolute;
+    bottom: 5vh;
+    left: 5.5vw;
   }
 }
 
