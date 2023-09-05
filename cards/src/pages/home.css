@@ -6,17 +6,6 @@
   margin-left: 1rem;
 }
 
-.pointSpace {
-  bottom: 0;
-  left: 40%;
-  margin: 1rem;
-  padding: 0.5rem;
-  position: absolute;
-  border: 1px solid white;
-  border-radius: 10px;
-  background-color: black;
-}
-
 .homePoints {
   font-size: 0.8rem;
   display: block;
@@ -49,6 +38,16 @@
     object-fit: cover;
     height: 100vh;
   }
+
+  .pointSpace {
+    bottom: 5vh;
+    right: 5vh;
+    padding: 0.5rem;
+    position: absolute;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: black;
+  }
 }
 
 @media (max-width: 575px) {
@@ -64,8 +63,8 @@
 
   .infoLogo {
     position: absolute;
-    bottom: 5%;
-    left: 5%;
+    bottom: 5vh;
+    left: 5vh;
     color: rgb(0, 102, 255);
     font-size: 3rem;
     z-index: 0;
@@ -73,5 +72,15 @@
 
   .picContain {
     position: absolute;
+  }
+
+  .pointSpace {
+    bottom: 5vh;
+    right: 5vh;
+    padding: 0.5rem;
+    position: absolute;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: black;
   }
 }
