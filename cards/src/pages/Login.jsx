@@ -70,7 +70,7 @@ function Login() {
           <div className="row">
             <div className="col-12 col-sm-8 loginWall">
               <img
-                src={`${import.meta.env.VITE_IMG_URL}/loginwall.webp`}
+                src={`${import.meta.env.VITE_IMG_URL}/loginwall.jpg`}
                 alt=""
               />
             </div>
