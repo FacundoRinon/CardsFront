@@ -63,7 +63,7 @@ function SignUp() {
           <div className="row">
             <div className="col-12 col-sm-8 loginWall">
               <img
-                src={`${import.meta.env.VITE_IMG_URL}/loginwall.jpg`}
+                src={`${import.meta.env.VITE_IMG_URL}/loginwall.webp`}
                 alt=""
               />
             </div>
