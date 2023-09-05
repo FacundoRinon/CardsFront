@@ -9,7 +9,7 @@
 }
 
 .card-disabled {
-  opacity: 0.5; /* Puedes ajustar el valor de opacidad según lo desees */
+  opacity: 0.5;
   pointer-events: painted;
 }
 
@@ -24,12 +24,12 @@
   }
 
   #character {
-    position: absolute; /* Cambiado a absolute */
+    position: absolute;
     object-fit: contain;
     width: 100%;
     height: 65%;
-    z-index: 1; /* Cambiado a 1 */
-    bottom: 25px; /* Cambiado a 0 */
+    z-index: 1;
+    bottom: 25px;
   }
 
   #background {
@@ -37,14 +37,13 @@
     height: 400px;
     object-fit: cover;
     position: relative;
-    right: 50px;
     top: -30px;
   }
 
   #cardName {
-    position: absolute; /* Cambiado a absolute */
-    z-index: 0; /* Cambiado a 1 */
-    bottom: 260px; /* Cambiado a 0 */
+    position: absolute;
+    z-index: 0;
+    bottom: 260px;
     left: 25%;
     font-size: 1.3rem;
     border: 1px solid white;
@@ -54,9 +53,9 @@
   }
 
   #lockedText {
-    position: absolute; /* Cambiado a absolute */
-    z-index: 1; /* Cambiado a 1 */
-    bottom: 5px; /* Cambiado a 0 */
+    position: absolute;
+    z-index: 1;
+    bottom: 5px;
     left: 65%;
     font-size: 1.5rem;
     color: black;
@@ -67,9 +66,9 @@
   }
 
   #recruitText {
-    position: absolute; /* Cambiado a absolute */
-    z-index: 1; /* Cambiado a 1 */
-    bottom: 5px; /* Cambiado a 0 */
+    position: absolute;
+    z-index: 1;
+    bottom: 5px;
     left: 50%;
     font-size: 1.5rem;
     color: white;
@@ -91,12 +90,11 @@
   }
 
   #character {
-    position: absolute; /* Cambiado a absolute */
+    position: absolute;
     object-fit: contain;
     width: 100%;
     height: 65%;
-    /* z-index: 2; */
-    bottom: 20px; /* Cambiado a 0 */
+    bottom: 20px;
   }
 
   #background {
@@ -109,9 +107,9 @@
   }
 
   #cardName {
-    position: absolute; /* Cambiado a absolute */
+    position: absolute;
     z-index: 1;
-    bottom: 280px; /* Cambiado a 0 */
+    bottom: 280px;
     left: 15%;
     font-size: 1.5rem;
     border: 1px solid white;
@@ -121,9 +119,9 @@
   }
 
   #lockedText {
-    position: absolute; /* Cambiado a absolute */
-    z-index: 1; /* Cambiado a 1 */
-    bottom: 5px; /* Cambiado a 0 */
+    position: absolute;
+    z-index: 1;
+    bottom: 5px;
     left: 65%;
     font-size: 1.5rem;
     color: black;
@@ -134,9 +132,9 @@
   }
 
   #recruitText {
-    position: absolute; /* Cambiado a absolute */
-    z-index: 1; /* Cambiado a 1 */
-    bottom: 5px; /* Cambiado a 0 */
+    position: absolute;
+    z-index: 1;
+    bottom: 5px;
     left: 50%;
     font-size: 1.5rem;
     color: white;
@@ -158,12 +156,12 @@
   }
 
   #character {
-    position: absolute; /* Cambiado a absolute */
+    position: absolute;
     object-fit: contain;
     width: 100%;
     height: 70%;
     z-index: 2;
-    bottom: 20px; /* Cambiado a 0 */
+    bottom: 20px;
   }
 
   #background {
@@ -177,9 +175,9 @@
 
   #cardName {
     width: 50%;
-    position: absolute; /* Cambiado a absolute */
+    position: absolute;
     z-index: 1;
-    bottom: 280px; /* Cambiado a 0 */
+    bottom: 280px;
     font-size: 1rem;
     border: 1px solid white;
     border-radius: 10px;
@@ -188,9 +186,9 @@
   }
 
   #lockedText {
-    position: absolute; /* Cambiado a absolute */
-    z-index: 5; /* Cambiado a 1 */
-    bottom: 5px; /* Cambiado a 0 */
+    position: absolute;
+    z-index: 5;
+    bottom: 5px;
     left: 30%;
     font-size: 1rem;
     color: black;
@@ -201,9 +199,9 @@
   }
 
   #recruitText {
-    position: absolute; /* Cambiado a absolute */
-    z-index: 5; /* Cambiado a 1 */
-    bottom: 5px; /* Cambiado a 0 */
+    position: absolute;
+    z-index: 5;
+    bottom: 5px;
     left: 45%;
     font-size: 1rem;
     color: white;
